@@ -4,9 +4,9 @@ bases:
   - ../base
 
 resources:
-  - ./triple-gateway.yaml
+  - ./clientinfo-gateway.yaml
 
 images:
-  - name: triple
-    newName: cleverpms/triple
-    newTag: client
+  - name: clientinfo
+    newName: cleverpms/clientinfo
+    newTag: cd2-na-dev

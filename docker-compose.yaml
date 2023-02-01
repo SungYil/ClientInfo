@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   app:
-    image: clientinfo
+    image: cleverpms/clientinfo:cd2-na-dev
     build:
       context: .
     ports:
