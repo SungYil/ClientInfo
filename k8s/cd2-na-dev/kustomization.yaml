@@ -1,0 +1,12 @@
+namespace: default
+
+bases:
+  - ../base
+
+resources:
+  - ./triple-gateway.yaml
+
+images:
+  - name: triple
+    newName: cleverpms/triple
+    newTag: client
