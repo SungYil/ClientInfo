@@ -2,6 +2,8 @@ apiVersion: networking.istio.io/v1beta1
 kind: Gateway
 metadata:
   name: clientinfo-gateway
+  labels:
+    app: clientinfo
 spec:
   selector:
     istio: ingressgateway
@@ -28,6 +30,8 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: clientinfo-virtualservice
+  labels:
+    app: clientinfo
 spec:
   gateways:
     - clientinfo-gateway
