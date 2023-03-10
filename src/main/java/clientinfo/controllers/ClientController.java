@@ -1,6 +1,9 @@
 package ClientInfo.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,10 +12,15 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpHeaders;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
+@RequestMapping("/clientinfo")
 public class ClientController{
     
     @RequestMapping(value = "/getip", method = RequestMethod.GET)
@@ -34,9 +42,10 @@ public class ClientController{
         return "home domain";
     }
 
-    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
-    public String redirect(){
-        return "redirect:https://intro.clever2-test.vsmart00.com";
+    @GetMapping("/redirect")
+    public void redirect(HttpServletResponse response){
+    	String redirect_uri="http://www.google.com";
+    	response.sendRedirect(redirect_uri);
     }
 
     @RequestMapping(value = "/getheader")
