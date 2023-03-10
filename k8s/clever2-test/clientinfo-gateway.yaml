@@ -41,6 +41,8 @@ spec:
     - match:
         - uri:
             prefix: /clientinfo
+        rewrite:
+          uri: /
       corsPolicy:
         allowCredentials: true
         allowHeaders:
@@ -57,3 +59,4 @@ spec:
             host: clientinfo-service
             port:
               number: 8080
+    - route:
