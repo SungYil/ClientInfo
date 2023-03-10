@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class ClientController{
-    @RequestMapping(value = "getip", method = RequestMethod.GET)
+    @RequestMapping(value = "clientinfo", method = RequestMethod.GET)
     public String home(Model model){
 
         HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
@@ -27,7 +27,12 @@ public class ClientController{
         return ""+ip;
     }
 
-    @RequestMapping(value = "getheader")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String text(Model model){
+        return "home domain";
+    }
+
+    @RequestMapping(value = "clientinfo/getheader")
     public String gethead(@RequestHeader Map<String, String> headers){
         
         for(Map.Entry<String, String> entry : headers.entrySet()){
