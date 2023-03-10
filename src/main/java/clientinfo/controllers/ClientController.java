@@ -7,13 +7,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class ClientController{
-    @RequestMapping(value = "clientinfo", method = RequestMethod.GET)
+    
+    @RequestMapping(value = "getip", method = RequestMethod.GET)
     public String home(Model model){
 
         HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
@@ -26,13 +28,18 @@ public class ClientController{
         model.addAttribute("clientIP", ip);
         return ""+ip;
     }
-
+    //clever2-test.vsmart00.com/clientinfo -> virtualservice prefix: clientinfo
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String text(Model model){
         return "home domain";
     }
 
-    @RequestMapping(value = "clientinfo/getheader")
+    @RequestMapping(value = "redirect", method = RequestMethod.GET)
+    public String redirect(){
+        return "redirect:https://intro.clever2-test.vsmart00.com";
+    }
+
+    @RequestMapping(value = "getheader")
     public String gethead(@RequestHeader Map<String, String> headers){
         
         for(Map.Entry<String, String> entry : headers.entrySet()){
