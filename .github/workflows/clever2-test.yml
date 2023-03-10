@@ -33,7 +33,7 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: clientinfo
-          tags: clever-test2-master
+          tags: clever2-test-master
           containerfiles: |
             ./Dockerfile
 

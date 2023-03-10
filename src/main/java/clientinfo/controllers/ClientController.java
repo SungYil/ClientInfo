@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class ClientController{
     
-    @RequestMapping(value = "getip", method = RequestMethod.GET)
+    @RequestMapping(value = "/getip", method = RequestMethod.GET)
     public String home(Model model){
 
         HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
@@ -34,12 +34,12 @@ public class ClientController{
         return "home domain";
     }
 
-    @RequestMapping(value = "redirect", method = RequestMethod.GET)
+    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
     public String redirect(){
         return "redirect:https://intro.clever2-test.vsmart00.com";
     }
 
-    @RequestMapping(value = "getheader")
+    @RequestMapping(value = "/getheader")
     public String gethead(@RequestHeader Map<String, String> headers){
         
         for(Map.Entry<String, String> entry : headers.entrySet()){
