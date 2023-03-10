@@ -26,7 +26,7 @@ jobs:
           image: clientinfo
           tags: clever-test2-master
           containerfiles: |
-            ./Dockerfile
+            ~/Dockerfile
 
       - name: Push
         id: push-image
