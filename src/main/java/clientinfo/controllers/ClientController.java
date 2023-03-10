@@ -43,8 +43,8 @@ public class ClientController{
     }
 
     @GetMapping("/redirect")
-    public void redirect(HttpServletResponse response){
-    	String redirect_uri="http://www.google.com";
+    public void redirect(HttpServletResponse response) throws IOException {
+    	String redirect_uri="http://intro.clever2-test.vsmart00.com";
     	response.sendRedirect(redirect_uri);
     }
 
