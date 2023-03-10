@@ -19,6 +19,12 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
+      - name: check to location
+        run: |
+          ls -al
+          cd ..
+          ls -al
+
       - name: Build
         id: build-image
         uses: redhat-actions/buildah-build@v2
