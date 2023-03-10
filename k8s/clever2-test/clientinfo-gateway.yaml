@@ -41,8 +41,8 @@ spec:
     - match:
         - uri:
             prefix: /clientinfo
-        rewrite:
-          uri: /
+        - rewrite:
+            uri: /
       corsPolicy:
         allowCredentials: true
         allowHeaders:
