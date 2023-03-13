@@ -38,7 +38,7 @@ public class ClientController{
     }
     //clever2-test.vsmart00.com/clientinfo -> virtualservice prefix: clientinfo
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String text(Model model){
+    public String text(){
         return "home domain";
     }
 
@@ -46,6 +46,17 @@ public class ClientController{
     public void redirect(HttpServletResponse response) throws IOException {
     	String redirect_uri="http://intro.clever2-test.vsmart00.com";
     	response.sendRedirect(redirect_uri);
+    }
+
+    @GetMapping("/redirect2")
+    public void redirect2(HttpServletResponse response) throws IOException {
+    	String redirect_uri="http://clever2-test.vsmart00.com/getheader";
+    	response.sendRedirect(redirect_uri);
+    }
+
+    @GetMapping("/redirect3")
+    public void redirect3() throws IOException {
+    	this.text();
     }
 
     @RequestMapping(value = "/getheader")
