@@ -50,7 +50,7 @@ public class ClientController{
 
     @GetMapping("/redirect2")
     public void redirect2(HttpServletResponse response) throws IOException {
-    	String redirect_uri="http://clever2-test.vsmart00.com/getheader";
+    	String redirect_uri="http://clever2-test.vsmart00.com/clientinfo/getheader";
     	response.sendRedirect(redirect_uri);
     }
 
